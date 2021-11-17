@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compshop</title>
+  <link href="./styles/tailwind.css" rel="stylesheet" />
+  <link href="./styles/forms.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="max-w-7xl mx-auto px-5 xl:px-0 flex mt-40">
+    <!-- filters -->
+    <div class="sm:block hidden">
+      <div class="w-60 bg-gray-100 p-4 border border-black rounded-lg space-y-6">
+        <p class="text-center text-xl font-medium">ფილტრები</p>
+
+        <div x-data="{ open: true }">
+          <button @click="open = !open" class="text-gray-700 z-10 p-1">
+            მწარმოებელი
+          </button>
+          <div x-show="open" x-transition:enter="transition ease-out duration-300 transform origin-top-left"
+            x-transition:enter-start="scale-0 opacity-50" x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-300 transform origin-top-left"
+            x-transition:leave-start="scale-100 opacity-50" x-transition:leave-end="scale-0 opacity-0"
+            class="flex flex-col ml-3 mt-1">
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Acer </span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Asus</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Dell</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Lenovo</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">Nini</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">Firo</span>
+            </label>
+          </div>
+        </div>
+
+        <div x-data="{ open: true }">
+          <button @click="open = !open" class="text-gray-700 p-1">
+            გაფართოება
+          </button>
+          <div x-show="open" x-transition:enter="transition ease-out duration-300 transform origin-top-left"
+            x-transition:enter-start="scale-0 opacity-50" x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-300 transform origin-top-left"
+            x-transition:leave-start="scale-100 opacity-50" x-transition:leave-end="scale-0 opacity-0"
+            class="flex flex-col ml-3 mt-1">
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">1366 x 768</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">1920 x 1080 </span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">3840 x 2160 </span>
+            </label>
+          </div>
+        </div>
+
+        <div x-data="{ open: true }">
+          <button @click="open = !open" class="text-gray-700 p-1">
+            პროცესორი
+          </button>
+          <div x-show="open" x-transition:enter="transition ease-out duration-300 transform origin-top-left"
+            x-transition:enter-start="scale-0 opacity-50" x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-300 transform origin-top-left"
+            x-transition:leave-start="scale-100 opacity-50" x-transition:leave-end="scale-0 opacity-0"
+            class="flex flex-col ml-3 mt-1">
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">Intel Core i3</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">Intel Core i5 </span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">Intel Core i7</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">AMD Ryzen 3 </span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">AMD Ryzen 5</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">AMD Ryzen 7 </span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">Intel Core i9</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">AMD Ryzen 9</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-4" x-data="{}">
+      
+      <template x-for="i in 12">
+        <!-- Laptops -->
+        <div class="bg-blue-200 p-4 border border-black rounded-lg">
+          <img src="./images/laptop.png" alt="" />
+          
+          <div class="mb-4">
+            <p class="text-center text-xl">Lenovo Thinkpad X13 gen2</p>
+            <p class="text-center">ფასი - 999</p>
+          </div>
+
+
+          <!-- Buttons -->
+          <div class="flex flex-row justify-between space-x-2">
+            <button
+              class="flex-1 bg-gradient-to-r from-red-700 to-pink-500 rounded-full py-3 px-4 text-white flex justify-center hover:from-pink-600 hover:to-red-600">
+              <!--კალათის აიკონი-->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </button>
+            <a href="./laptop.html"
+              class="flex-1 bg-gradient-to-r from-purple-800 to-purple-500 rounded-full py-3 px-4 text-white flex flex-row items-center justify-center hover:from-purple-500 hover:to-purple-700">
+              <!--კალათის აიკონი-->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              <span>
+                დეტალები
+              </span>
+            </a>
+          </div>
+
+
+
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <script defer src="./js/alpine.js"></script>
+</body>
+
+</html>
